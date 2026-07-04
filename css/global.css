@@ -1,0 +1,100 @@
+
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+
+/* --- VARIÁVEIS DE CORES (Baseadas nas suas capturas) --- */
+
+:root {
+    /* TEMA CLARO (Padrão - Cream & Blue) */
+    --bg-main: #F2EBDF;       /* Fundo creme */
+    --bg-card: #FFFFFF;       /* Card branco */
+    --text-primary: #03588C;  /* Texto Azul Petróleo */
+    --text-secondary: #57737A;
+    --accent: #03588C;        /* Bordas e Ícones */
+    --action: #D96704;        /* Laranja (Botões) */
+    --input-border: rgba(3, 88, 140, 0.3);
+    --action-hover: #F27B13;
+}
+
+/* TEMA ESCURO (Ativado pelo JS) */
+html[data-theme="dark"] {
+    --bg-main: #121126;
+    --bg-card: #2E4A50;
+    --text-primary: #F2EBDF;
+    --text-secondary: #B0C1D9;
+    --accent: #F2EBDF;
+    --action: #D96704;
+    --input-border: rgba(242, 235, 223, 0.3);
+    --action-hover: #FF8A1F;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--bg-main);
+    color: var(--text-primary);
+    min-height: 100vh;
+    transition: background-color 0.4s ease, color 0.4s ease;
+    overflow-x: hidden;
+}
+
+/* --- BOTÕES (Padrão para todo o sistema) --- */
+.btn-primary, button[type="submit"], .btn button {
+    width: 100%;
+    padding: 14px;
+    box-sizing: border-box;
+    background-color: var(--action);
+    color: #FFFFFF;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition:
+    background-color 0.3s ease,
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+    margin-top: 10px;
+}
+
+.btn-primary:hover, button[type="submit"]:hover, .btn button:hover {
+    background-color: var(--action-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(217, 103, 4, 0.3);
+}
+
+.btn-primary:focus,
+button[type="submit"]:focus,
+.btn button:focus {
+
+    outline: 3px solid rgba(217, 103, 4, 0.3);
+
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    cursor: pointer;
+}
+
+
+

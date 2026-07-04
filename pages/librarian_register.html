@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="PT-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/global.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <title>Cadastro do Bibliotecário</title>
+</head>
+
+<body class="auth-body">
+
+    <header class="auth-header">
+        
+        <a href="../index.html" class="btn-back">Voltar ao Painel</a>
+    
+    </header>
+    
+    <div class="right-container">
+        
+        <div class="right-register">
+            
+            <form action="#" id="librarian_register">
+
+                <h1>Cadastro do Bibliotecário</h1>
+
+                <div class="input-box">
+                    <input type="text" id="name" name="name" placeholder=" " required>
+                    <label for="name" class="label">Nome Completo
+                        <i class="ph ph-user"></i>
+                    </label>
+                </div>
+
+                <div class="input-box">
+                    <input type="text" id="cpf" name="cpf" maxlength="14" placeholder=" " required>
+                    <label for="cpf" class="label">CPF
+                        <i class="ph ph-identification-card"></i>
+                    </label>
+                </div>
+
+                <div class="input-box">
+                    <input type="text" id="registration" name="registration" placeholder=" " required>
+                    <label for="registration" class="label">Matrícula
+                        <i class="ph ph-identification-badge"></i>
+                    </label>
+                </div>
+
+                <div class="input-box">
+                    <input type="email" id="email" name="email" placeholder=" " required>
+                    <label for="email" class="label">Email
+                        <i class="ph ph-envelope"></i>
+                    </label>
+                </div>
+
+                <div class="input-box">
+                    <input type="text" id="phone" name="phone" maxlength="15" placeholder=" " required>
+                    <label for="phone" class="label">Número de Telefone
+                        <i class="ph ph-phone"></i>
+                    </label>
+                </div>
+
+                <div class="input-box">
+                    <input type="password" id="password" name="password" placeholder=" " required>
+                    <label for="password" class="label">Senha
+                        <i class="ph ph-lock-key"></i>
+                    </label>
+                </div>
+
+                <div class="input-box">
+                    <input type="password" id="password-confirm" name="password-confirm" placeholder=" " required>
+                    <label for="password-confirm" class="label">Confirmar Senha
+                        <i class="ph ph-lock-key"></i>
+                    </label>
+                </div>
+
+                <div class="input-box">
+                    <select class="select" id="access_level" name="access_level">
+                        <option value="" disabled selected>Selecionar Nível de Acesso</option>
+                        <option value="admin">Administrador</option>
+                        <option value="staff">Funcionário</option>
+                    </select>
+                </div>
+
+                <div class="btn">
+                    <button type="submit">Cadastrar</button>
+                </div>
+
+            </form>
+        </div>
+    </div>
+
+    <script src="../js/api.js"></script>
+
+    <script type="module" src="../js/main.js"></script>
+
+    
+</body>
+</html>

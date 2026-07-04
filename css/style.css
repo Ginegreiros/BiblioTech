@@ -1,0 +1,523 @@
+
+/* --- LAYOUT DE DUAS COLUNAS (LOGIN E CADASTROS) --- */
+
+.auth-page {
+    display: flex;
+    min-height: 100vh;
+}
+
+
+
+/* --- LAYOUT DE DUAS COLUNAS --- */
+/* --- LAYOUT DUAS COLUNAS --- */
+.image-left, .image-in-left {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--bg-main);
+    padding: 20px;
+    overflow: hidden;
+    transition: background-color 0.4s ease;
+}
+
+/* AQUI ESTÁ A CORREÇÃO DO TAMANHO DA IMAGEM */
+.image-left img, .image-in-left img {
+    width: 60%;           
+    max-width: 500px;     
+    height: auto;
+    object-fit: contain;
+    /* Sombras suaves para dar profundidade */
+    filter: drop-shadow(0 10px 10px rgba(0,0,0,0.1)); 
+}
+
+.right-container, .container-central {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+    background-color: var(--bg-main);
+}
+
+/* CARD DO FORMULÁRIO */
+.right-register, .card-login {
+    background-color: var(--bg-card);
+    width: 100%;
+    max-width: 420px; /* Card um pouco mais estreito e elegante */
+    padding: 45px 40px;
+    border-radius: 12px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.4s ease;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: var(--text-primary);
+    font-size: 38px;
+}
+
+/* --- INPUTS & LABELS --- */
+.input-group, .input-box {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.input-group input, .input-box input, select {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 14px 15px;
+    background: var(--bg-card);
+    border: 2px solid var(--input-border); 
+    border-radius: 8px;
+    color: var(--text-primary);
+    font-size: 14px;
+    outline: none;
+    transition:
+    border-color 0.3s ease,
+    background-color 0.3s ease,
+    color 0.3s ease;
+}
+
+/* Foco: Agora fica AZUL (Secondary) em vez de laranja */
+.input-group input:focus, .input-box input:focus, select:focus {
+    border-color: var(--accent);
+}
+
+/* LABEL COM ÍCONE */
+.input-group label, .input-box label {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--text-secondary);
+    background-color: transparent;
+    padding: 0 5px;
+    pointer-events: none;
+    transition: 0.3s;
+}
+
+/* Ícone dentro do Label */
+.input-group label i, .input-box label i {
+    font-size: 16px;
+    color: var(--accent); /* ÍCONES AZUIS */
+    transition:
+    border-color 0.3s ease,
+    background-color 0.3s ease,
+    color 0.3s ease;
+}
+
+/* Efeito ao Subir */
+.input-group input:focus + label,
+.input-group input:not(:placeholder-shown) + label,
+.input-box input:focus + label,
+.input-box input:not(:placeholder-shown) + label {
+    top: 0;
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--accent); /* Texto fica Azul ao focar */
+    background-color: var(--bg-card);
+    z-index: 2;
+}
+
+/* --- LINKS --- */
+.forgot-password {
+    text-align: right;
+    margin-top: -10px;
+    margin-bottom: 25px;
+}
+
+.forgot-password a {
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-size: 0.85rem;
+    transition:
+    border-color 0.3s ease,
+    background-color 0.3s ease,
+    color 0.3s ease;
+}
+
+.forgot-password a:hover {
+    color: var(--accent); 
+    text-decoration: underline;
+}
+
+/* --- MOBILE --- */
+
+@media (max-width: 900px) {
+    .image-left, .image-in-left {
+        display: none; /* Some a imagem no celular */
+    }
+    
+    .right-container, .container-central {
+        padding: 15px;
+    }
+    
+    .right-register, .card-login {
+        box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+        padding: 20px;
+    }
+
+    
+}
+
+/* TELAS MUITO PEQUENAS */
+
+
+@media (max-width: 500px){ 
+    
+        h1{ font-size: 28px; } 
+        
+    }
+
+
+/* DASHBOARD */
+
+.dashboard-body { 
+
+    display: flex; 
+    flex-direction: column; 
+}
+
+/* NAVBAR */ 
+.navbar { 
+    width: 260px; 
+    height: 100vh; 
+    background-color: var(--bg-card); 
+    position: fixed; 
+    left: 0; top: 0; 
+    padding: 30px 20px; 
+    display: flex; 
+    flex-direction: column; 
+    gap: 30px; 
+    box-shadow: 4px 0 15px rgba(0,0,0,0.05); }
+
+    /* LOGO */ 
+    .logo { 
+        display: flex; 
+        align-items: center; 
+        gap: 10px; 
+        font-size: 32px; 
+        font-weight: 700; 
+        color: var(--accent); 
+    } 
+        
+    .logo i { 
+        font-size: 40px; 
+    } 
+    
+    /* LINKS */ 
+    .nav-links {
+         list-style: none; 
+         display: flex; 
+         flex-direction: column; 
+         gap: 12px; 
+        } 
+        
+    .nav-links a { 
+        display: flex; 
+        padding: 12px 15px; 
+        border-radius: 10px; 
+        font-size: 18px; 
+        transition: 0.3s ease; 
+    } 
+    
+    .nav-links a:hover, .nav-links .active { 
+
+        background-color: var(--action); color: white;
+
+    }
+
+    /* BOTÃO SAIR */ 
+
+    .btn-logout { 
+        margin-top: auto; 
+        padding: 12px; 
+        border-radius: 10px; 
+        background-color: rgba(217, 103, 4, 0.1); 
+        transition: 0.3s ease; 
+    } 
+
+    .btn-logout:hover { 
+        background-color: var(--action); 
+        color: white; 
+    } 
+
+
+    /* CONTEÚDO */ 
+    
+    .dashboard-container { 
+        margin-left: 260px; 
+        width: calc(100% - 260px);
+        min-height: 100vh; 
+        display: flex; 
+        justify-content: center; 
+        align-items: center; 
+        padding: 40px; 
+    } 
+        
+    /* TEXOS */ 
+    
+    .welcome-section { 
+        max-width: 850px; 
+        text-align: center; 
+    } 
+    
+    .welcome-section h1 { 
+        font-size: 72px; 
+        line-height: 1.1; 
+        margin-bottom: 25px; 
+    } 
+    
+    .welcome-section p {
+        font-size: 28px; 
+        line-height: 1.5; 
+        color: var(--text-secondary); 
+    }
+
+    /* ========================= CONTATO ========================= */
+    
+    .container-contact {
+
+        width: 100%; 
+        min-height: 100vh; 
+        display: flex; 
+        flex-direction: column; 
+        justify-content: center; 
+        align-items: center; 
+        padding: 30px; 
+    } 
+    
+    /* CARD */ 
+    
+    #contactForm {
+        width: 100%; 
+        max-width: 700px; 
+        background-color: var(--bg-card); 
+        padding: 40px; border-radius: 16px; 
+        box-shadow: 0 15px 30px rgba(0,0,0,0.08); 
+        display: flex; 
+        flex-direction: column; 
+        gap: 20px; 
+    } 
+    
+    /* INPUTS */ 
+    
+    #contactForm input, 
+    #contactForm textarea {
+
+        width: 100%; 
+        padding: 15px; 
+        border-radius: 10px; 
+        border: 2px solid var(--input-border); 
+        background-color: var(--bg-card); 
+        color: var(--text-primary); 
+        font-size: 16px; 
+        outline: none; 
+        transition: 0.3s ease; 
+    } 
+    
+    /* FOCUS */ 
+
+    #contactForm input:focus, 
+    #contactForm textarea:focus { 
+        border-color: var(--accent); 
+    } 
+    
+    /* TEXTAREA */ 
+    
+    #contactForm textarea { 
+        min-height: 160px; 
+        resize: none; 
+        font-family: inherit; 
+    }
+
+
+/* ========================= RESPONSIVIDADE DASHBOARD ========================= */
+
+@media (max-width: 900px) {
+
+     /* BODY */ 
+     
+     .dashboard-body 
+     { display: flex; 
+        flex-direction: column; 
+     } 
+
+    /* NAVBAR */ 
+
+    .navbar { 
+        position: relative; 
+        width: 100%; 
+        height: auto; 
+        top: unset; 
+        left: unset; 
+        flex-direction: column; 
+        align-items: center; 
+        justify-content: center; 
+        padding: 20px; gap: 20px; 
+    } 
+    
+    /* LOGO */ 
+    .logo { 
+        justify-content: center; 
+    }
+    
+    /* MENU */ 
+    .nav-links {
+         width: 100%; 
+         display: flex; 
+         flex-direction: row; 
+         flex-wrap: wrap; 
+         justify-content: center; 
+         gap: 10px; 
+    } 
+        
+    .nav-links li { 
+        list-style: none; 
+    } 
+    
+    .nav-links a {
+         font-size: 16px; 
+         padding: 10px 15px; 
+    }
+    
+    /* BOTÃO SAIR */ 
+    .btn-logout {
+         margin-top: 0;
+          width: 100%;
+           text-align: center;
+        } 
+         
+    /* CONTEÚDO */ 
+
+    .dashboard-container { 
+        margin-left: 0; 
+        width: 100%; 
+        padding: 40px 20px; 
+    } 
+    
+    .welcome-section { 
+        width: 100%; 
+    } 
+    
+    .welcome-section h1 {
+         font-size: 42px; 
+         line-height: 1.2; 
+    } 
+    
+    .welcome-section p {
+         font-size: 20px; 
+        } 
+    
+} 
+    
+    /* CELULARES PEQUENOS */ 
+    
+    @media (max-width: 500px) {
+        
+        .navbar {
+             padding: 15px; 
+            
+        } 
+        
+        .logo {
+             font-size: 24px; 
+        } 
+            
+        .logo i {
+             font-size: 30px; 
+        } 
+        
+        .nav-links {
+            flex-direction: column; 
+            align-items: stretch; 
+        } 
+    
+        .nav-links a {
+            text-align: center; 
+        } 
+        
+        .welcome-section h1 {
+             font-size: 30px; 
+        } 
+            
+        .welcome-section p {
+             font-size: 17px; line-height: 1.5; 
+            
+        } 
+        
+    }
+
+
+/* ALERTA */ 
+
+.toast {
+
+    position: fixed;
+
+    top: 20px;
+
+    right: 20px;
+
+    padding: 15px 20px;
+
+    border-radius: 8px;
+
+    color: white;
+
+    font-weight: bold;
+
+    z-index: 9999;
+
+    animation: fadeIn 0.3s ease;
+
+}
+
+.toast.success {
+
+    background-color: #16a34a;
+
+}
+
+.toast.error {
+
+    background-color: #dc2626;
+
+}
+
+@keyframes fadeIn {
+
+    from {
+
+        opacity: 0;
+
+        transform: translateY(-10px);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform: translateY(0);
+
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
